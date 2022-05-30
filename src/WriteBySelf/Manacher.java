@@ -1,6 +1,6 @@
 package WriteBySelf;
 /**
- * ��һ���ַ����������ĵĳ���
+ * 求一个字符串的最大回文的长度
  * @author jasonborn
  *
  */
@@ -22,7 +22,7 @@ public class Manacher {
 		char[] chs = manacherString(str);
 		int[] pArr = new int[chs.length];
 		int C = -1;
-		int R = -1;
+		int R = -1; //回文右边界的再往右一个位置 最右的有效区域是R - 1位置
 		int max = Integer.MIN_VALUE;
 		for(int i = 0; i < chs.length; i++) {
 			pArr[i] = R > i ? Math.min(pArr[2 * C - i], R - i) : 1;
